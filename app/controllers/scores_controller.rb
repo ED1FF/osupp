@@ -4,7 +4,7 @@ class ScoresController < ApplicationController
   # GET /scores
   # GET /scores.json
   def index
-    @scores = Score.all
+    @scores = Score.where(user_id: current_user)
   end
 
   # GET /scores/1
@@ -14,7 +14,7 @@ class ScoresController < ApplicationController
 
   # GET /scores/new
   def new
-    @score = Score.new
+    @score = current_user.scores.build
   end
 
   # GET /scores/1/edit
@@ -24,7 +24,7 @@ class ScoresController < ApplicationController
   # POST /scores
   # POST /scores.json
   def create
-    @score = Score.new(score_params)
+    @score = current_user.scores.build(score_params)
 
     respond_to do |format|
       if @score.save
