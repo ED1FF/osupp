@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :scores
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'scores#index'
+  root to: 'scores#index'
 end
