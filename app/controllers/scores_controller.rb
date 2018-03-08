@@ -4,7 +4,15 @@ class ScoresController < ApplicationController
   # GET /scores
   # GET /scores.json
   def index
-    @scores = Score.where(user_id: current_user)
+    @scores = Score.where(user_id: current_user).order(:score_pp).reverse
+    @scores_for_calc = Score.where(user_id: current_user).order(:score_pp).reverse.first(2)
+    pp_scale = [1 , 0.95 , 0.9, 0.86 , 0.81 , 0.77 , 0.74 ,  0.7]
+    @pp = 0.0
+    index = 0
+    @scores_for_calc.each do |i|
+      @pp += i.score_pp * pp_scale[index]
+      index += 1
+    end
   end
 
   # GET /scores/1
