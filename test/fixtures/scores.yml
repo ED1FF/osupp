@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  score_name: MyString
+  score_acc: 1.5
+  score_pp: 1.5
+
+two:
+  score_name: MyString
+  score_acc: 1.5
+  score_pp: 1.5

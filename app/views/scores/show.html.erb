@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Score name:</strong>
+  <%= @score.score_name %>
+</p>
+
+<p>
+  <strong>Score acc:</strong>
+  <%= @score.score_acc %>
+</p>
+
+<p>
+  <strong>Score pp:</strong>
+  <%= @score.score_pp %>
+</p>
+
+<%= link_to 'Edit', edit_score_path(@score) %> |
+<%= link_to 'Back', scores_path %>
